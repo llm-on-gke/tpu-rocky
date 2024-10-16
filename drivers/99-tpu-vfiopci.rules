@@ -1,0 +1,13 @@
+# Rules for binding vfio enabled TPU devices to vfio-pci.
+
+# TPUv5Lite
+SUBSYSTEM=="pci", ACTION=="add", ATTRS{vendor}=="0x1ae0", ATTRS{device}=="0x0063", ATTRS{subsystem_vendor}=="0x1ae0", ATTRS{subsystem_device}=="0x00af", DRIVER!="vfio-pci", TAG+="bind_to_vfio_pci"
+
+# TPUv5
+SUBSYSTEM=="pci", ACTION=="add", ATTRS{vendor}=="0x1ae0", ATTRS{device}=="0x0062", ATTRS{subsystem_vendor}=="0x1ae0", ATTRS{subsystem_device}=="0x00ad", DRIVER!="vfio-pci", TAG+="bind_to_vfio_pci"
+
+# TPUv6litepod
+SUBSYSTEM=="pci", ACTION=="add", ATTRS{vendor}=="0x1ae0", ATTRS{device}=="0x006f", ATTRS{subsystem_vendor}=="0x1ae0", ATTRS{subsystem_device}=="0x00d1", DRIVER!="vfio-pci", TAG+="bind_to_vfio_pci"
+
+# Bind all 'bind_to_vfio_pci' tagged devices to vfio-pci.
+TAG=="bind_to_vfio_pci", RUN+="/lib/udev/bind_to_vfio_pci.sh $kernel"
