@@ -1,5 +1,5 @@
 ZONE=us-central1-a
-SOURCE_IMAGE=projects/northam-ce-mlai-tpu/global/family/v5e-rocky-linux-9
+SOURCE_IMAGE=projects/northam-ce-mlai-tpu/global/family/tpu-vm-rocky #v5e-rocky-linux-9
 ACCELERATOR_TYPE=v5litepod-8 #v5lite-8
 TPU_NAME=rick-tpu-rocky
 PROJECT=northam-ce-mlai-tpu
@@ -15,7 +15,7 @@ node: {
     runtime_version:\"$RUNTIME_VERSION\",
     accelerator_type: \"$ACCELERATOR_TYPE\",
     network_config: {enable_external_ips: true},
-    boot_disk: {source_image: \"$SOURCE_IMAGE\", disk_size_gb: 50},
+    boot_disk: {source_image: \"$SOURCE_IMAGE\", disk_size_gb: 150},
 }
 }
 }

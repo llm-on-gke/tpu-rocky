@@ -28,6 +28,8 @@
     },
     "Sources": {
       "startup_script.sh": "./tpu_vm.sh",
+      
+
       "validation_script.sh": "./tpu_driver_vm_validation.sh",
       "99-tpu-vfiopci.rules": "./drivers/99-tpu-vfiopci.rules",
       "bind_to_vfio_pci.sh": "./drivers/bind_to_vfio_pci.sh"
