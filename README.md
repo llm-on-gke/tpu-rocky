@@ -19,6 +19,11 @@ cp /go/bin/daisy /usr/local/bin
 ```
 
 ### Build TPU VM Rocky Image
+- download this repo 
+```
+git clone https://github.com/llm-on-gke/tpu-rocky
+cd tpu-rocky
+```
 - update build.wf.josn file
   line 3 and 124: "Project": "northam-ce-mlai-tpu", #
   line 4: "Zone": "us-central1-a",
