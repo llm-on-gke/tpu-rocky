@@ -29,13 +29,13 @@ cp /go/bin/daisy /usr/local/bin
   ```
 ### Create TPU VM:
 Update create-tpu-vm.sh on line 1-5:
-
+```
 ZONE=us-central1-a
 SOURCE_IMAGE=projects/northam-ce-mlai-tpu/global/family/tpu-vm-rocky #v5e-rocky-linux-9
 ACCELERATOR_TYPE=v5litepod-8 #v5lite-8
 TPU_NAME=rick-tpu-rocky
 PROJECT=northam-ce-mlai-tpu
-
+```
 Run the shell command to create TPU VM:
 ```
 bash create-tpu-vm.sh
